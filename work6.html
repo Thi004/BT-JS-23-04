@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>work6</title>
+</head>
+<body>
+<h4>Kiểm tra xem 1 số có phải là số nguyên tố hay không</h4>
+<input type="number" placeholder="nhập số" id='n'>
+<button onclick="kiemTra ()">Kiểm tra</button>
+<p id="kq"></p>
+<script>
+    function kiemTra() {
+        let n = +document.getElementById('n').value;
+        if (n <= 1) {
+            document.getElementById('kq').innerHTML = n + ' Không phải là số nguyên tố';
+        } else if (n === 2) {
+            document.getElementById('kq').innerHTML = n + ' là số nguyên tố';
+        } else {
+            for (let i = 3; i <= n; i++) {
+                if (n % i === 0 && n % 2 != 0 && n % 3 != 0) {
+                    document.getElementById('kq').innerHTML = n + ' là số nguyên tố';
+                } else {
+                    document.getElementById('kq').innerHTML = n + ' Không phải là số nguyên tố';
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
